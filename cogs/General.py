@@ -59,32 +59,13 @@ class General(commands.Cog):
         roast = json.loads(response.text)
         await ctx.send(roast['insult'])
 
-
-    @commands.command()
-    async def help(self, ctx):
-        try:
-            await ctx.author.send("**https://github.com/SpectrixOfficial/Spectrum**\n*Here's my help page!*")
-            helpMsg = await ctx.send("**I sent you help in your DMs :mailbox_with_mail:**")
-        except Exception:
-            helpMsg = await ctx.send(f"**{ctx.author.mention} https://github.com/SpectrixOfficial/Spectrum**\n*Here's my help page!*")
-        await helpMsg.add_reaction("a:SpectrumOkSpin:466480898049835011")
-
     @commands.command()
     async def invite(self, ctx):
         try:
-            await ctx.author.send("**https://bit.ly/SpectrumDiscord**\n*Here's my invite link!*")
+            await ctx.author.send("**https://discord.com/api/oauth2/authorize?client_id=836552964784783370&permissions=8&scope=bot**\n*Here's my invite link!*")
             helpMsg = await ctx.send("**I sent my invite link in your DMs :mailbox_with_mail:**")
         except Exception:
-            helpMsg = await ctx.send(f"**{ctx.author.mention} https://bit.ly/SpectrumDiscord**\n*Here's my invite link!*")
-        await helpMsg.add_reaction("a:SpectrumOkSpin:466480898049835011")
-         
-    @commands.command(aliases=['support'])
-    async def server(self, ctx):
-        try:
-            await ctx.author.send("**https://discord.gg/Kghqehz**\n*Here's my official server!*")
-            helpMsg = await ctx.send("**I sent you my server invite in your DMs :mailbox_with_mail:**")
-        except Exception:
-            helpMsg = await ctx.send(f"**{ctx.author.mention} https://discord.gg/Kghqehz/**\n*Here's my official server!*")
+            helpMsg = await ctx.send(f"**{ctx.author.mention} https://discord.com/api/oauth2/authorize?client_id=836552964784783370&permissions=8&scope=bot** \n*Here's my invite link!*")
         await helpMsg.add_reaction("a:SpectrumOkSpin:466480898049835011")
 
     @commands.command()
@@ -101,6 +82,15 @@ class General(commands.Cog):
             await pollMessage.add_reaction("\N{THUMBS DOWN SIGN}")
         except Exception as e:
             await ctx.send(f"Oops, I couldn't react to the poll. Check that I have permission to add reactions! ```py\n{e}```")
+
+    @commands.command()
+    async def help(self, ctx):
+        try:
+            await ctx.author.send("**robinhoodpadilla.com**\n*Here's my help page!*")
+            helpMsg = await ctx.send("**I sent you help in your DMs :mailbox_with_mail:**")
+        except Exception:
+            helpMsg = await ctx.send(f"**{ctx.author.mention} robinhoodpadilla.com**\n*Here's my help page!*")
+        await helpMsg.add_reaction("a:SpectrumOkSpin:466480898049835011")
 
 def setup(bot):
     bot.add_cog(General(bot))
